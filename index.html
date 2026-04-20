@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/webp" href="favicon.webp">
+<title>Lee's Moving Company</title>
+<script src="https://tracking-params.pages.dev/persist-url-params.min.js"></script>
+<script type="text/javascript" src="//s.ksrndkehqnwntyxlhgto.com/98039.js"></script>
+<script>window.$wc_leads = window.$wc_leads || [];</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ──────────────────────────────────────────
+   TOKENS
+────────────────────────────────────────── */
+:root {
+  --ink:       #0F1923;
+  --ink-60:    rgba(15,25,35,.6);
+  --ink-30:    rgba(15,25,35,.3);
+  --fire:      #e31e24;
+  --fire-d:    #c41a1f;
+  --fire-glow: rgba(227,30,36,.18);
+  --sand:      #FAF8F5;
+  --line:      #E8E3DC;
+  --white:     #FFFFFF;
+  --star:      #ffcc00;
+  --r:         12px;
+  --t:         .2s ease;
+  --max:       1360px;
+}
+
+/* ──────────────────────────────────────────
+   BASE
+────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ──────────────────────────────────────────
+   UTILITY
+────────────────────────────────────────── */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 48px; }
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--fire); padding: 5px 12px;
+  background: var(--fire-glow); border-radius: 100px;
+}
+.tag svg { width: 10px; height: 10px; fill: var(--fire); flex-shrink: 0; }
+
+/* ──────────────────────────────────────────
+   TOPBAR
+────────────────────────────────────────── */
+.topbar {
+  background: var(--ink);
+  color: rgba(255,255,255,.7);
+  font-size: 13px; font-weight: 500;
+  text-align: center; padding: 10px 24px;
+  position: sticky; top: 0; z-index: 99;
+  letter-spacing: .01em;
+}
+.topbar a {
+  color: #fff; font-weight: 700;
+  border-bottom: 1px solid var(--fire); padding-bottom: 1px;
+  margin: 0 4px;
+}
+
+/* ──────────────────────────────────────────
+   NAV
+────────────────────────────────────────── */
+.nav {
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  position: sticky; top: 37px; z-index: 98;
+  padding: 0 48px;
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.logo {
+  display: flex; align-items: center; gap: 14px;
+  flex-shrink: 0;
+}
+.fm-logo-img { height: 48px; width: auto; }
+.nav-phone {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 1px;
+}
+.nav-phone small { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-60); }
+.nav-phone a {
+  font-size: 22px; font-weight: 700; color: var(--ink);
+  display: flex; align-items: center; gap: 7px;
+  transition: color var(--t);
+}
+.nav-phone a:hover { color: var(--fire); }
+.nav-phone a svg { width: 18px; height: 18px; stroke: var(--fire); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.btn-nav {
+  background: var(--fire); color: #fff;
+  font-size: 14px; font-weight: 700;
+  padding: 12px 24px; border-radius: 8px;
+  transition: background var(--t), transform var(--t);
+  white-space: nowrap; flex-shrink: 0;
+}
+.btn-nav:hover { background: var(--fire-d); transform: translateY(-1px); }
+
+/* ──────────────────────────────────────────
+   HERO
+────────────────────────────────────────── */
+.hero {
+  background: var(--ink);
+  color: #fff;
+  padding: 100px 48px 64px;
+  overflow: hidden;
+  position: relative;
+  background-image: url('hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(15,25,35,.82);
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,30,36,.22) 0%, transparent 70%);
+  right: -100px; top: -200px;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 460px;
+  gap: 80px; align-items: start;
+  position: relative; z-index: 1;
+}
+.hero-left { padding-bottom: 0; }
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 28px;
+}
+.hero-tag .live-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #4ade80;
+  box-shadow: 0 0 0 2px rgba(74,222,128,.3);
+  animation: ping 2s ease infinite;
+}
+@keyframes ping {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(74,222,128,.3); }
+  50%       { box-shadow: 0 0 0 5px rgba(74,222,128,.1); }
+}
+
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 5.5vw, 80px);
+  font-weight: 900; line-height: 1.05;
+  margin-bottom: 24px;
+  letter-spacing: -.02em;
+}
+.hero-h1 .keyword {
+  color: var(--fire);
+  font-style: italic;
+  display: block;
+}
+
+.hero-sub {
+  font-size: 18px; line-height: 1.75;
+  color: rgba(255,255,255,.6);
+  max-width: 520px; margin-bottom: 40px;
+  font-weight: 400;
+}
+.hero-trust {
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.ht-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,.6);
+}
+.ht-item svg {
+  width: 16px; height: 16px; flex-shrink: 0;
+  stroke: var(--fire); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.ht-sep { width: 1px; height: 16px; background: rgba(255,255,255,.15); }
+
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-fire {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--fire); color: #fff;
+  font-size: 16px; font-weight: 700;
+  padding: 17px 32px; border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(227,30,36,.4);
+  transition: background var(--t), transform var(--t), box-shadow var(--t);
+}
+.btn-fire:hover { background: var(--fire-d); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(227,30,36,.5); }
+.btn-fire svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.btn-ghost-white {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent; color: rgba(255,255,255,.8);
+  font-size: 16px; font-weight: 600;
+  padding: 17px 28px; border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,.2);
+  transition: border-color var(--t), color var(--t), background var(--t);
+}
+.btn-ghost-white:hover { border-color: rgba(255,255,255,.5); color: #fff; background: rgba(255,255,255,.06); }
+.btn-ghost-white svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── HERO FORM CARD ── */
+.hero-card {
+  background: #fff; color: var(--ink);
+  border-radius: 20px;
+  padding: 36px 32px 32px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.45);
+  position: relative; z-index: 2;
+  margin-top: 8px;
+}
+.hc-eyebrow {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--fire); margin-bottom: 6px;
+}
+.hc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px; font-weight: 700;
+  color: var(--ink); margin-bottom: 24px; line-height: 1.2;
+}
+
+.hc-field { margin-bottom: 14px; }
+.hc-field label {
+  display: block; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--ink-60); margin-bottom: 7px;
+}
+.hc-input-row {
+  display: flex; align-items: center;
+  border: 1.5px solid var(--line); border-radius: 10px;
+  overflow: hidden; background: var(--sand);
+  transition: border-color var(--t), background var(--t);
+}
+.hc-input-row:focus-within { border-color: var(--fire); background: #fff; }
+.hc-icon {
+  width: 48px; height: 50px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  border-right: 1.5px solid var(--line);
+}
+.hc-icon svg {
+  width: 18px; height: 18px;
+  stroke: var(--ink-30); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.hc-input-row:focus-within .hc-icon svg { stroke: var(--fire); }
+.hc-input-row input {
+  flex: 1; padding: 0 16px; height: 50px; border: none; outline: none;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px;
+  color: var(--ink); background: transparent;
+}
+.hc-input-row input::placeholder { color: var(--ink-30); }
+.hc-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.hc-row2 .hc-field { min-width: 0; }
+.hc-row2 .hc-input-row { min-width: 0; }
+.hc-row2 .hc-input-row input { min-width: 0; }
+
+.btn-hc-submit {
+  width: 100%; background: var(--fire); color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px; font-weight: 700;
+  padding: 17px; border-radius: 10px;
+  margin-top: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: background var(--t), transform var(--t);
+  box-shadow: 0 6px 24px rgba(227,30,36,.35);
+}
+.btn-hc-submit:hover { background: var(--fire-d); transform: translateY(-1px); }
+.btn-hc-submit svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.hc-note {
+  font-size: 11px; color: var(--ink-30); text-align: center;
+  margin-top: 12px; line-height: 1.6;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.hc-note svg { width: 12px; height: 12px; stroke: var(--ink-30); fill: none; stroke-width: 2; flex-shrink: 0; }
+
+/* ──────────────────────────────────────────
+   SOCIAL PROOF STRIP
+────────────────────────────────────────── */
+.proof-strip {
+  background: var(--sand);
+  border-bottom: 1px solid var(--line);
+}
+.proof-strip-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 48px;
+  display: flex; align-items: stretch;
+}
+.ps-item {
+  flex: 1; display: flex; align-items: center; gap: 12px;
+  padding: 22px 24px;
+  border-right: 1px solid var(--line);
+  transition: background var(--t);
+}
+.ps-item:last-child { border-right: none; }
+.ps-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: #fff; border: 1.5px solid var(--line);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.ps-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--fire); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.ps-label { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+.ps-sub { font-size: 11px; color: var(--ink-60); margin-top: 1px; }
+
+/* ──────────────────────────────────────────
+   WHY US
+────────────────────────────────────────── */
+.why-sec {
+  padding: 96px 48px;
+  background: var(--sand);
+}
+.why-head {
+  max-width: var(--max); margin: 0 auto 64px;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+}
+.why-head-left .tag { margin-bottom: 16px; }
+.why-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -.02em;
+}
+.why-h2 em { color: var(--fire); font-style: italic; }
+.why-head-right {
+  font-size: 15px; color: var(--ink-60); max-width: 380px;
+  line-height: 1.75; font-weight: 400;
+  flex-shrink: 0;
+}
+.why-grid {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px; background: var(--line); border-radius: 16px; overflow: hidden;
+}
+.why-card {
+  background: #fff; padding: 40px 32px;
+  transition: background var(--t), box-shadow var(--t);
+  position: relative;
+  overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute; top: -40px; right: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,30,36,.08) 0%, transparent 70%);
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.why-card::after {
+  content: '';
+  position: absolute; bottom: -20px; left: -20px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,30,36,.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.why-card:hover { background: var(--sand); }
+.why-card:hover::before {
+  opacity: 1;
+  transform: scale(1.4);
+  background: radial-gradient(circle, rgba(227,30,36,.14) 0%, transparent 70%);
+}
+.wc-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px; font-weight: 900; line-height: 1;
+  color: var(--fire-glow); margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--fire) 0%, rgba(227,30,36,.15) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative; z-index: 1;
+}
+.wc-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--sand);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+.wc-title, .wc-body { position: relative; z-index: 1; }
+.wc-icon svg {
+  width: 24px; height: 24px;
+  stroke: var(--ink); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.wc-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+.wc-body { font-size: 14px; color: var(--ink-60); line-height: 1.75; }
+
+/* ──────────────────────────────────────────
+   REVIEWS
+────────────────────────────────────────── */
+.reviews-sec { padding: 96px 48px; background: var(--white); }
+.reviews-head {
+  max-width: var(--max); margin: 0 auto 56px;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+}
+.reviews-head .tag { margin-bottom: 14px; }
+.reviews-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -.02em;
+}
+.reviews-h2 em { color: var(--fire); font-style: italic; }
+.reviews-overall {
+  display: flex; align-items: center; gap: 16px; flex-shrink: 0;
+}
+.rev-big-score {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px; font-weight: 900; line-height: 1; color: var(--ink);
+}
+.rev-big-right { display: flex; flex-direction: column; gap: 4px; }
+.rev-stars-row { display: flex; gap: 3px; }
+.rev-stars-row svg { width: 16px; height: 16px; fill: var(--star); }
+.rev-count { font-size: 12px; color: var(--ink-60); font-weight: 500; }
+
+.reviews-grid {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.rev-card {
+  padding: 32px; border-radius: 16px;
+  background: var(--sand); border: 1.5px solid var(--line);
+  display: flex; flex-direction: column;
+  transition: border-color var(--t), box-shadow var(--t), transform var(--t);
+}
+.rev-card:hover { border-color: var(--fire); box-shadow: 0 8px 40px rgba(227,30,36,.08); transform: translateY(-3px); }
+.rev-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+.rev-stars svg { width: 15px; height: 15px; fill: var(--star); }
+.rev-quote { font-size: 15px; color: var(--ink-60); line-height: 1.8; flex: 1; margin-bottom: 24px; font-style: italic; }
+.rev-bottom { display: flex; align-items: center; gap: 12px; }
+.rev-av {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--ink); color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.rev-name { font-size: 14px; font-weight: 700; }
+.rev-meta { font-size: 11px; color: var(--ink-60); margin-top: 2px; }
+
+/* ──────────────────────────────────────────
+   MAP
+────────────────────────────────────────── */
+.map-sec { padding: 96px 48px; background: var(--ink); color: #fff; }
+.map-inner { max-width: var(--max); margin: 0 auto; }
+.map-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+  margin-bottom: 56px;
+}
+.map-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--fire); padding: 5px 12px;
+  background: rgba(227,30,36,.15); border-radius: 100px; margin-bottom: 16px;
+}
+.map-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -.02em;
+}
+.map-h2 em { color: var(--fire); font-style: italic; }
+.map-layout {
+  display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start;
+}
+.map-frame {
+  border-radius: 16px; overflow: hidden;
+  aspect-ratio: 16/9;
+  border: 1.5px solid rgba(255,255,255,.1);
+  box-shadow: 0 24px 80px rgba(0,0,0,.5);
+}
+.map-frame iframe { width: 100%; height: 100%; display: block; border: none; }
+.map-sidebar { display: flex; flex-direction: column; gap: 8px; }
+.map-sidebar-title {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: rgba(255,255,255,.35); margin-bottom: 8px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.map-city {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; border-radius: 10px;
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,.7);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  transition: background var(--t), color var(--t), border-color var(--t);
+}
+.map-city:hover { background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.15); }
+.map-city-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fire); flex-shrink: 0; }
+
+/* ──────────────────────────────────────────
+   FAQ
+────────────────────────────────────────── */
+.faq-sec { padding: 96px 48px; background: var(--white); }
+.faq-inner { max-width: var(--max); margin: 0 auto; }
+.faq-head {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  margin-bottom: 56px;
+}
+.faq-head-left .tag { margin-bottom: 16px; }
+.faq-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -.02em;
+  margin-bottom: 16px;
+}
+.faq-h2 em { color: var(--fire); font-style: italic; }
+.faq-head-right {
+  font-size: 15px; color: var(--ink-60); line-height: 1.8; padding-top: 8px;
+}
+.faq-head-right a {
+  color: var(--fire); font-weight: 600; border-bottom: 1px solid var(--fire-glow);
+  transition: border-color var(--t);
+}
+.faq-head-right a:hover { border-color: var(--fire); }
+
+.faq-list { display: flex; flex-direction: column; gap: 2px; background: var(--line); border-radius: 16px; overflow: hidden; }
+.faq-item { background: #fff; }
+.faq-btn {
+  width: 100%; text-align: left;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 24px 32px; cursor: pointer;
+  font-size: 16px; font-weight: 600; color: var(--ink);
+  transition: background var(--t), color var(--t);
+}
+.faq-btn:hover { background: var(--sand); }
+.faq-item.open .faq-btn { background: var(--sand); color: var(--fire); }
+.faq-toggle {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: var(--sand);
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--t), transform var(--t);
+}
+.faq-item.open .faq-toggle { background: var(--fire); transform: rotate(45deg); }
+.faq-toggle svg {
+  width: 12px; height: 12px;
+  stroke: var(--ink); fill: none; stroke-width: 2.5; stroke-linecap: round;
+  transition: stroke var(--t);
+}
+.faq-item.open .faq-toggle svg { stroke: #fff; }
+.faq-ans {
+  padding: 0 32px; max-height: 0; overflow: hidden;
+  font-size: 15px; color: var(--ink-60); line-height: 1.8;
+  transition: max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-ans { display: block !important; max-height: 500px !important; padding: 0 32px 24px !important; opacity: 1 !important; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-item.open .faq-btn { color: var(--fire); }
+
+/* ──────────────────────────────────────────
+   FOOTER FORM
+────────────────────────────────────────── */
+.footer-form-sec { padding: 96px 48px 96px; background: var(--sand); }
+.ff-outer {
+  max-width: var(--max); margin: 0 auto;
+  background: var(--ink); border-radius: 24px;
+  padding: 72px 80px;
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr minmax(0, 540px); gap: 80px; align-items: start;
+}
+.ff-outer::before {
+  content: '';
+  position: absolute; left: -100px; bottom: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,30,36,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ff-left { position: relative; z-index: 1; color: #fff; }
+.ff-eyebrow {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--fire); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.ff-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--fire); border-radius: 1px; }
+.ff-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -.02em;
+  margin-bottom: 20px;
+}
+.ff-h2 em { color: var(--fire); font-style: italic; }
+.ff-body { font-size: 16px; color: rgba(255,255,255,.5); line-height: 1.8; margin-bottom: 40px; }
+.ff-contact-items { display: flex; flex-direction: column; gap: 20px; }
+.ff-ci { display: flex; align-items: center; gap: 14px; }
+.ff-ci-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(255,255,255,.07); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.ff-ci-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--fire); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.ff-ci-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.35); margin-bottom: 3px; }
+.ff-ci-val { font-size: 16px; font-weight: 700; color: #fff; }
+.ff-ci-val a { color: #fff; transition: color var(--t); }
+.ff-ci-val a:hover { color: var(--fire); }
+
+.ff-right { position: relative; z-index: 1; min-width: 0; }
+.ff-form-card {
+  background: #fff; border-radius: 20px;
+  padding: 40px 36px;
+  max-width: 100%; box-sizing: border-box;
+}
+.ff-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700; color: var(--ink);
+  margin-bottom: 6px;
+}
+.ff-form-sub { font-size: 13px; color: var(--ink-60); margin-bottom: 28px; }
+
+.ff-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ff-field { margin-bottom: 12px; }
+.ff-field.full { grid-column: 1 / -1; }
+.ff-field label {
+  display: block; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--ink-60); margin-bottom: 6px;
+}
+.ff-inp-row {
+  display: flex; align-items: center;
+  border: 1.5px solid var(--line); border-radius: 10px; overflow: hidden;
+  background: var(--sand); transition: border-color var(--t), background var(--t);
+}
+.ff-inp-row:focus-within { border-color: var(--fire); background: #fff; }
+.ff-inp-icon {
+  width: 44px; height: 46px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  border-right: 1.5px solid var(--line);
+}
+.ff-inp-icon svg {
+  width: 17px; height: 17px;
+  stroke: var(--ink-30); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.ff-inp-row:focus-within .ff-inp-icon svg { stroke: var(--fire); }
+.ff-inp-row input {
+  flex: 1; padding: 0 14px; height: 46px; border: none; outline: none;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px;
+  color: var(--ink); background: transparent;
+}
+.ff-inp-row input::placeholder { color: var(--ink-30); }
+
+.btn-ff {
+  width: 100%; background: var(--fire); color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px; font-weight: 700;
+  padding: 17px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 6px;
+  box-shadow: 0 6px 24px rgba(227,30,36,.35);
+  transition: background var(--t), transform var(--t);
+}
+.btn-ff:hover { background: var(--fire-d); transform: translateY(-1px); }
+.btn-ff svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.ff-disc { font-size: 11px; color: var(--ink-30); text-align: center; margin-top: 12px; line-height: 1.6; }
+
+/* ──────────────────────────────────────────
+   FOOTER
+────────────────────────────────────────── */
+footer {
+  background: var(--ink); color: rgba(255,255,255,.3);
+  padding: 28px 48px; font-size: 13px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+footer strong { color: rgba(255,255,255,.6); }
+footer a { color: var(--fire); }
+
+/* ── CTA PHONE STRIP ── */
+.cta-strip {
+  background: var(--fire);
+  padding: 28px 48px;
+  text-align: center;
+}
+.cta-strip-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px; flex-wrap: wrap;
+}
+.cta-strip-text {
+  font-size: 17px; font-weight: 600; color: #fff;
+}
+.cta-strip-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #fff; color: var(--ink);
+  font-size: 18px; font-weight: 800;
+  padding: 14px 28px; border-radius: 10px;
+  transition: transform var(--t), box-shadow var(--t);
+  text-decoration: none;
+}
+.cta-strip-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+.cta-strip-btn svg { width: 20px; height: 20px; stroke: var(--fire); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.cta-strip.dark { background: var(--ink); }
+.cta-strip.dark .cta-strip-btn { background: var(--fire); color: #fff; }
+.cta-strip.dark .cta-strip-btn svg { stroke: #fff; }
+
+/* ── INLINE FORM SUCCESS ── */
+.form-success {
+  text-align: center; padding: 32px 16px;
+}
+.form-success-ring {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--fire-glow); margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+.form-success-ring svg { width: 28px; height: 28px; stroke: var(--fire); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.form-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 900; margin-bottom: 8px;
+}
+.form-success p { font-size: 14px; color: var(--ink-60); max-width: 300px; margin: 0 auto 20px; line-height: 1.7; }
+.form-success .btn-call {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--ink); color: #fff;
+  font-size: 16px; font-weight: 700;
+  padding: 14px 28px; border-radius: 10px;
+  text-decoration: none;
+}
+.form-success .btn-call svg { width: 16px; height: 16px; stroke: var(--fire); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── SERVICES SECTION ── */
+.services-sec { padding: 96px 48px; background: var(--sand); }
+.services-inner { max-width: var(--max); margin: 0 auto; }
+.services-head { text-align: center; margin-bottom: 56px; }
+.services-head .tag { margin-bottom: 16px; }
+.services-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -.02em;
+  margin-bottom: 16px;
+}
+.services-h2 em { color: var(--fire); font-style: italic; }
+.services-sub { font-size: 16px; color: var(--ink-60); max-width: 560px; margin: 0 auto; line-height: 1.75; }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.svc-card {
+  background: #fff; border-radius: 16px; padding: 36px 28px;
+  border: 1.5px solid var(--line);
+  transition: border-color var(--t), box-shadow var(--t), transform var(--t);
+  position: relative; overflow: hidden;
+}
+.svc-card::before {
+  content: '';
+  position: absolute; top: -50px; right: -50px;
+  width: 160px; height: 160px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,30,36,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.svc-card:hover { border-color: var(--fire); box-shadow: 0 8px 40px rgba(227,30,36,.08); transform: translateY(-3px); }
+.svc-icon {
+  width: 52px; height: 52px; border-radius: 12px;
+  background: var(--fire-glow);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; position: relative; z-index: 1;
+}
+.svc-icon svg {
+  width: 26px; height: 26px;
+  stroke: var(--fire); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.svc-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; position: relative; z-index: 1; }
+.svc-body { font-size: 14px; color: var(--ink-60); line-height: 1.75; position: relative; z-index: 1; }
+
+/* ── PROCESS SECTION ── */
+.process-sec { padding: 96px 48px; background: var(--ink); color: #fff; }
+.process-inner { max-width: var(--max); margin: 0 auto; }
+.process-head { text-align: center; margin-bottom: 64px; }
+.process-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--fire); padding: 5px 12px;
+  background: rgba(227,30,36,.15); border-radius: 100px; margin-bottom: 16px;
+}
+.process-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -.02em;
+}
+.process-h2 em { color: var(--fire); font-style: italic; }
+.process-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute; top: 32px; left: 10%; right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(227,30,36,.3), rgba(227,30,36,.3), transparent);
+  pointer-events: none;
+}
+.p-step { text-align: center; position: relative; z-index: 1; }
+.p-step-num {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(227,30,36,.15);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px; font-weight: 900; color: var(--fire);
+}
+.p-step-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.p-step-body { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.7; }
+
+/* ──────────────────────────────────────────
+   RESPONSIVE
+────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .ff-outer { grid-template-columns: minmax(0, 1fr); gap: 48px; padding: 56px 48px; }
+  .map-layout { grid-template-columns: 1fr; }
+  .map-sidebar { flex-direction: row; flex-wrap: wrap; }
+  .map-city { flex: 0 0 auto; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .wrap { padding: 0 24px; }
+  .hero { padding: 72px 24px 24px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-card { border-radius: 16px; margin-top: 0; }
+  .hero-left { padding-bottom: 0; }
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
+  .faq-head { grid-template-columns: 1fr; gap: 16px; }
+  .ff-outer { padding: 48px 32px; }
+  .ff-row { grid-template-columns: 1fr; }
+  .ff-field.full { grid-column: auto; }
+  footer { flex-direction: column; text-align: center; }
+  .topbar { display: none; }
+  .nav { top: 0; }
+  nav .btn-nav { display: none; }
+  .why-sec, .reviews-sec, .map-sec, .faq-sec, .footer-form-sec, .services-sec, .process-sec { padding-left: 24px; padding-right: 24px; }
+  .proof-strip-inner { padding: 0 24px; overflow-x: auto; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .process-steps::before { display: none; }
+}
+@media (max-width: 640px) {
+  .hero-ctas { flex-direction: column; }
+  .hero-h1 { font-size: 40px; }
+  .hc-row2 { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .why-head, .reviews-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .reviews-overall { align-self: flex-start; }
+  .footer-form-sec { padding-left: 16px; padding-right: 16px; }
+  .ff-outer { padding: 24px 12px; gap: 32px; border-radius: 16px; }
+  .ff-left { padding: 0 20px; }
+  .ff-form-card { padding: 36px 32px 32px; border-radius: 16px; }
+  .cta-strip { padding: 24px; }
+  .cta-strip-inner { flex-direction: column; gap: 12px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══ TOPBAR ═══════════════════════════════════ -->
+<div class="topbar">
+  Licensed &amp; insured &nbsp;·&nbsp; Free consultation &nbsp;·&nbsp; Call us now:
+  <a href="tel:+15616773898">(561) 677-3898</a>
+</div>
+
+<!-- ═══ NAV ══════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">
+      <img src="logo.png" alt="Lee's Moving Company" class="fm-logo-img" width="250" height="150">
+    </div>
+    <div class="nav-phone">
+      <small>Free Quote — Call or Text</small>
+      <a href="tel:+15616773898">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+        (561) 677-3898
+      </a>
+    </div>
+    <a class="btn-nav" href="#footer-form-card">Get Free Quote</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+
+      <div class="hero-tag">
+        <span class="live-dot"></span>
+        Now Booking · South Florida
+      </div>
+
+      <h1 class="hero-h1" id="hero-headline">
+        Your Trusted<br>
+        <span class="keyword">Local Movers.</span>
+      </h1>
+
+      <p class="hero-sub" id="hero-sub">
+        Professional local movers serving South Florida. Fully licensed and insured with transparent pricing — no surprises, no hidden fees.
+      </p>
+
+      <div class="hero-trust">
+        <div class="ht-item">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Licensed &amp; Insured
+        </div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          5+ Years Experience
+        </div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Free Consultation
+        </div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor" stroke="none"/></svg>
+          4.9 · Google Reviews
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#hero-form-card" class="btn-fire">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
+          Get Free Quote
+        </a>
+        <a href="tel:+15616773898" class="btn-ghost-white">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+
+    <!-- HERO FORM -->
+    <div class="hero-card" id="hero-form-card">
+      <div class="hc-eyebrow">Get Your Free Quote</div>
+      <div class="hc-title">Tell us about your move</div>
+
+      <div class="hc-field">
+        <label>Moving From</label>
+        <div class="hc-input-row">
+          <div class="hc-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <input type="text" placeholder="Address or postal code" id="h-from">
+        </div>
+      </div>
+      <div class="hc-field">
+        <label>Moving To</label>
+        <div class="hc-input-row">
+          <div class="hc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <input type="text" placeholder="Address or postal code" id="h-to">
+        </div>
+      </div>
+      <div class="hc-row2">
+        <div class="hc-field">
+          <label>Full Name</label>
+          <div class="hc-input-row">
+            <div class="hc-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <input type="text" placeholder="John Smith" id="h-name">
+          </div>
+        </div>
+        <div class="hc-field">
+          <label>Phone Number</label>
+          <div class="hc-input-row">
+            <div class="hc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg></div>
+            <input type="tel" placeholder="(561) 000-0000" id="h-phone">
+          </div>
+        </div>
+      </div>
+      <div class="hc-row2">
+        <div class="hc-field">
+          <label>Email Address</label>
+          <div class="hc-input-row">
+            <div class="hc-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <input type="email" placeholder="john@email.com" id="h-email">
+          </div>
+        </div>
+        <div class="hc-field">
+          <label>Moving Date</label>
+          <div class="hc-input-row">
+            <div class="hc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <input type="date" id="h-date">
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn-hc-submit" onclick="submitHeroForm()">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Get My Free Quote
+      </button>
+
+      <p class="hc-note">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        No obligation · No spam · Fast response guaranteed
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROOF STRIP ═══════════════════════════════ -->
+<div class="proof-strip">
+  <div class="proof-strip-inner">
+    <div class="ps-item">
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="ps-label">Licensed &amp; Insured</div>
+        <div class="ps-sub">Serving South Florida</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div>
+        <div class="ps-label">Experienced Team</div>
+        <div class="ps-sub">5+ years of expertise</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <div>
+        <div class="ps-label">Transparent Pricing</div>
+        <div class="ps-sub">No surprises or hidden fees</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="var(--star)" stroke="none"/></svg>
+      </div>
+      <div>
+        <div class="ps-label">4.9 / 5 Stars</div>
+        <div class="ps-sub">4.9-star Google reviews</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div>
+        <div class="ps-label">Free Consultation</div>
+        <div class="ps-sub">Fast response guaranteed</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip dark">
+  <div class="cta-strip-inner">
+    <span class="cta-strip-text">Get a free, no-obligation quote in minutes.</span>
+    <a href="tel:+15616773898" class="cta-strip-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+      (561) 677-3898
+    </a>
+  </div>
+</div>
+
+<!-- ═══ WHY US ════════════════════════════════════ -->
+<section class="why-sec">
+  <div class="why-head">
+    <div class="why-head-left">
+      <div class="tag"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5"/></svg>Why Choose Us</div>
+      <h2 class="why-h2">What makes Lee's Moving Company<br>South Florida's <em>trusted choice</em></h2>
+    </div>
+    <div class="why-head-right">
+      Every move is handled by our own experienced, professional team. No surprises, no hidden fees — just reliable movers who show up on time and treat your belongings with care.
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="wc-num">01</div>
+      <div class="wc-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="wc-title">Professional Experienced Crew</div>
+      <p class="wc-body">Our team brings 5+ years of moving expertise to every job. Trained professionals who handle your belongings with the utmost care and efficiency.</p>
+    </div>
+    <div class="why-card">
+      <div class="wc-num">02</div>
+      <div class="wc-icon">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <div class="wc-title">No Hidden Fees, Ever</div>
+      <p class="wc-body">Affordable and transparent pricing from the start. The quote we give is the price you pay — no surprise charges, no last-minute add-ons.</p>
+    </div>
+    <div class="why-card">
+      <div class="wc-num">03</div>
+      <div class="wc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="wc-title">Fully Insured Operations</div>
+      <p class="wc-body">Your belongings are fully insured throughout the entire move. We carry comprehensive coverage so you can move with complete peace of mind.</p>
+    </div>
+    <div class="why-card">
+      <div class="wc-num">04</div>
+      <div class="wc-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="wc-title">Flexible &amp; Reliable</div>
+      <p class="wc-body">We work around your schedule with flexible booking options. Available 7 days a week with on-time arrival guaranteed for every move.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <span class="cta-strip-text">Ready to get started? Call for a free quote today.</span>
+    <a href="tel:+15616773898" class="cta-strip-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+      (561) 677-3898
+    </a>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ══════════════════════════════════ -->
+<section class="services-sec">
+  <div class="services-inner">
+    <div class="services-head">
+      <div class="tag"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5"/></svg>Our Services</div>
+      <h2 class="services-h2">Complete moving solutions<br>for <em>every need</em></h2>
+      <p class="services-sub">From a condo to a corporate office — we handle it all with the same care, professionalism, and attention to detail.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="svc-title">Residential Moving</div>
+        <p class="svc-body">Full-service local moves across South Florida. Our experienced crews handle loading, transport, and unloading — tailored to your unique needs.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="svc-title">Long Distance Moving</div>
+        <p class="svc-body">Florida to anywhere in the country. Reliable long-distance relocation services with careful handling and transparent pricing for every mile.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <div class="svc-title">Commercial Moving</div>
+        <p class="svc-body">Specialized office and corporate relocations. Pre-move planning, IT equipment handling, and minimal downtime for your business.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <div class="svc-title">Storage Services</div>
+        <p class="svc-body">Short and long-term secure storage solutions. Climate-controlled facilities to keep your belongings safe until you're ready for them.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 7 18"/><circle cx="10" cy="20.5" r="1.5"/><circle cx="18" cy="20.5" r="1.5"/><path d="M7 18h13l1.5-9H5.5"/></svg>
+        </div>
+        <div class="svc-title">Junk Removal</div>
+        <p class="svc-body">Eco-friendly disposal of furniture, appliances, and unwanted items. One call and it's gone — fast, affordable, and hassle-free.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94L6.73 20.2a2.12 2.12 0 01-3-3l6.74-6.74a6 6 0 017.94-7.94L14.7 6.3z"/></svg>
+        </div>
+        <div class="svc-title">Packing Services</div>
+        <p class="svc-body">Expert packing for everything — clothes, glassware, appliances, and valuables. Professional materials and techniques so it all arrives safely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip dark">
+  <div class="cta-strip-inner">
+    <span class="cta-strip-text">Need help picking the right service? We'll walk you through it.</span>
+    <a href="tel:+15616773898" class="cta-strip-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+      (561) 677-3898
+    </a>
+  </div>
+</div>
+
+<!-- ═══ REVIEWS ═══════════════════════════════════ -->
+<section class="reviews-sec">
+  <div class="reviews-head">
+    <div>
+      <div class="tag"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5"/></svg>Reviews</div>
+      <h2 class="reviews-h2">What our clients <em>say</em></h2>
+    </div>
+    <div class="reviews-overall">
+      <div class="rev-big-score">4.9</div>
+      <div class="rev-big-right">
+        <div class="rev-stars-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="rev-count">Based on verified Google reviews</div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="rev-card">
+      <div class="rev-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="rev-quote">"Professional company. They were reasonably priced, took care of our stuff and were very fast. We will definitely go to them again for any future moves. Highly recommended!"</p>
+      <div class="rev-bottom">
+        <div class="rev-av">AI</div>
+        <div>
+          <div class="rev-name">Adham Ilyas</div>
+          <div class="rev-meta">Verified Customer · Google Review</div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="rev-quote">"I must say that I was originally concerned when we hired Lee's BUT…they kept an honest and open line of communication leading up to our move and it went as smoothly as a move can go. The 3 man crew were incredible, efficient, very hard working and it was an exceptional move. I don't want to think about it…but I will hire them in a heartbeat if the need arises!"</p>
+      <div class="rev-bottom">
+        <div class="rev-av">RB</div>
+        <div>
+          <div class="rev-name">Rudy Buczolits</div>
+          <div class="rev-meta">Verified Customer · Google Review</div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="rev-quote">"Fast, Efficient, and Professional! I had a great experience with Lee's Moving Company. They were incredibly fast, efficient, and handled everything with care. The team worked seamlessly and made the whole process stress-free. Highly recommend them if you're looking for reliable movers who get the job done right!"</p>
+      <div class="rev-bottom">
+        <div class="rev-av">RK</div>
+        <div>
+          <div class="rev-name">Rahul Km</div>
+          <div class="rev-meta">Verified Customer · Google Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip dark">
+  <div class="cta-strip-inner">
+    <span class="cta-strip-text">No hidden fees. No obligations. Just honest pricing.</span>
+    <a href="tel:+15616773898" class="cta-strip-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+      (561) 677-3898
+    </a>
+  </div>
+</div>
+
+<!-- ═══ PROCESS ═══════════════════════════════════ -->
+<section class="process-sec">
+  <div class="process-inner">
+    <div class="process-head">
+      <div class="process-tag">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="var(--fire)"><circle cx="5" cy="5" r="5"/></svg>
+        How It Works
+      </div>
+      <h2 class="process-h2">Your move in<br><em>4 simple steps</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="p-step">
+        <div class="p-step-num">1</div>
+        <div class="p-step-title">Request a Quote</div>
+        <p class="p-step-body">Call us or fill out the form. We'll ask a few questions about your move and provide a fast, free quote with no obligations.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-step-num">2</div>
+        <div class="p-step-title">Book Your Date</div>
+        <p class="p-step-body">Pick a day that works for you — we're available 7 days a week. We'll confirm everything and lock in your time slot.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-step-num">3</div>
+        <div class="p-step-title">We Handle the Rest</div>
+        <p class="p-step-body">Our experienced crew shows up on time with all the equipment and supplies. We pack, load, transport, and unload with care.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-step-num">4</div>
+        <div class="p-step-title">Settle Into Your New Space</div>
+        <p class="p-step-body">We place everything where you want it and make sure you're completely satisfied before we leave. Moving made easy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <span class="cta-strip-text">Step 1 starts with a phone call. Let's go.</span>
+    <a href="tel:+15616773898" class="cta-strip-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+      (561) 677-3898
+    </a>
+  </div>
+</div>
+
+<!-- ═══ MAP ═══════════════════════════════════════ -->
+<section class="map-sec">
+  <div class="map-inner">
+    <div class="map-head">
+      <div>
+        <div class="map-tag">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="var(--fire)"><circle cx="5" cy="5" r="5"/></svg>
+          Service Area
+        </div>
+        <h2 class="map-h2">Proudly serving<br><em>South Florida</em></h2>
+      </div>
+    </div>
+    <div class="map-layout">
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d450000!2d-80.15!3d26.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div>
+        <div class="map-sidebar-title">Cities we serve</div>
+        <div class="map-sidebar">
+          <div class="map-city"><span class="map-city-dot"></span>West Palm Beach</div>
+          <div class="map-city"><span class="map-city-dot"></span>Palm Beach Gardens</div>
+          <div class="map-city"><span class="map-city-dot"></span>Boca Raton</div>
+          <div class="map-city"><span class="map-city-dot"></span>Delray Beach</div>
+          <div class="map-city"><span class="map-city-dot"></span>Jupiter</div>
+          <div class="map-city"><span class="map-city-dot"></span>Wellington</div>
+          <div class="map-city"><span class="map-city-dot"></span>Boynton Beach</div>
+          <div class="map-city"><span class="map-city-dot"></span>Lake Worth</div>
+          <div class="map-city"><span class="map-city-dot"></span>Fort Lauderdale</div>
+          <div class="map-city"><span class="map-city-dot"></span>Miami</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <span class="cta-strip-text">Serving South Florida — call us today.</span>
+    <a href="tel:+15616773898" class="cta-strip-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+      (561) 677-3898
+    </a>
+  </div>
+</div>
+
+<!-- ═══ FAQ ═══════════════════════════════════════ -->
+<section class="faq-sec">
+  <div class="faq-inner">
+    <div class="faq-head">
+      <div class="faq-head-left">
+        <div class="tag"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5"/></svg>FAQ</div>
+        <h2 class="faq-h2">Common <em>questions</em><br>answered</h2>
+      </div>
+      <div class="faq-head-right">
+        Still have questions? We're easy to reach.
+        Call us at <a href="tel:+15616773898">(561) 677-3898</a> any time or
+        <a href="#footer-form-card">request a callback</a>
+        and we'll get back to you shortly.
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button type="button" class="faq-btn">
+          How does your pricing work?
+          <div class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+        </button>
+        <div class="faq-ans">We provide transparent, upfront quotes with no hidden fees. After learning about your move details, we give you a clear price that won't change. All equipment and supplies are included in the rate.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">
+          What areas do you serve?
+          <div class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+        </button>
+        <div class="faq-ans">We proudly serve all of South Florida — including West Palm Beach, Palm Beach Gardens, Boca Raton, Delray Beach, Jupiter, Wellington, Boynton Beach, Lake Worth, and surrounding communities. We also handle long-distance moves to Miami, Orlando, and across Florida.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">
+          Are your movers experienced?
+          <div class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+        </button>
+        <div class="faq-ans">Absolutely. Our team brings 5+ years of professional moving experience. Every crew member is trained, professional, and dedicated to handling your belongings with the utmost care.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">
+          What services do you offer?
+          <div class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+        </button>
+        <div class="faq-ans">We handle residential moves, long distance moves, commercial relocations, packing services, storage solutions, and junk removal. Whether it's a condo or a full office relocation, our crew has the equipment and experience to get it done.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <span class="cta-strip-text">Still have questions? We'd love to hear from you.</span>
+    <a href="tel:+15616773898" class="cta-strip-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+      (561) 677-3898
+    </a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER FORM ════════════════════════════════ -->
+<section class="footer-form-sec">
+  <div class="ff-outer">
+    <div class="ff-left">
+      <div class="ff-eyebrow">Get in touch</div>
+      <h2 class="ff-h2">Ready to plan<br>your <em>move?</em></h2>
+      <p class="ff-body">Fill out the form and we'll reach out shortly with a personalized quote. No pressure, no obligation.</p>
+      <div class="ff-contact-items">
+        <div class="ff-ci">
+          <div class="ff-ci-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>
+          </div>
+          <div>
+            <div class="ff-ci-label">Phone</div>
+            <div class="ff-ci-val"><a href="tel:+15616773898">(561) 677-3898</a></div>
+          </div>
+        </div>
+        <div class="ff-ci">
+          <div class="ff-ci-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="ff-ci-label">Email</div>
+            <div class="ff-ci-val"><a href="#" id="ob-email"></a></div>
+          </div>
+        </div>
+        <div class="ff-ci">
+          <div class="ff-ci-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="ff-ci-label">Hours</div>
+            <div class="ff-ci-val">Sales: 24 / 7 · 365</div>
+          </div>
+        </div>
+      </div>
+      <img src="team-photo.jpg" alt="Lee's Moving Company crew" style="margin-top:32px;border-radius:16px;width:100%;object-fit:cover;object-position:top;max-height:220px;border:1.5px solid rgba(255,255,255,.1);">
+    </div>
+    <div class="ff-right">
+      <div class="ff-form-card" id="footer-form-card">
+        <div class="ff-form-title">Get your free quote</div>
+        <div class="ff-form-sub">Takes 60 seconds — we'll follow up shortly</div>
+        <div class="ff-row">
+          <div class="ff-field full">
+            <label>Moving From</label>
+            <div class="ff-inp-row">
+              <div class="ff-inp-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <input type="text" placeholder="Address or postal code" id="ff-from"/>
+            </div>
+          </div>
+          <div class="ff-field full">
+            <label>Moving To</label>
+            <div class="ff-inp-row">
+              <div class="ff-inp-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <input type="text" placeholder="Address or postal code" id="ff-to"/>
+            </div>
+          </div>
+          <div class="ff-field">
+            <label>Full Name</label>
+            <div class="ff-inp-row">
+              <div class="ff-inp-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <input type="text" placeholder="John Smith" id="ff-name"/>
+            </div>
+          </div>
+          <div class="ff-field">
+            <label>Phone Number</label>
+            <div class="ff-inp-row">
+              <div class="ff-inp-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg></div>
+              <input type="tel" placeholder="(561) 000-0000" id="ff-phone"/>
+            </div>
+          </div>
+          <div class="ff-field">
+            <label>Email Address</label>
+            <div class="ff-inp-row">
+              <div class="ff-inp-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <input type="email" placeholder="john@email.com" id="ff-email"/>
+            </div>
+          </div>
+          <div class="ff-field">
+            <label>Moving Date</label>
+            <div class="ff-inp-row">
+              <div class="ff-inp-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <input type="date" id="ff-date"/>
+            </div>
+          </div>
+          <div class="ff-field full">
+            <button class="btn-ff" type="button" onclick="submitFooterForm()">
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Get My Free Quote
+            </button>
+          </div>
+        </div>
+        <p class="ff-disc">By submitting you agree to be contacted regarding your move. We never sell your information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════ -->
+<footer>
+  <div>
+    <strong>Lee's Moving Company</strong> &nbsp;·&nbsp; South Florida &nbsp;·&nbsp;
+    Your trusted local movers
+  </div>
+  <div>
+    <a href="tel:+15616773898">(561) 677-3898</a>
+    &nbsp;·&nbsp; &copy; <script>document.currentScript.before(new Text(new Date().getFullYear()))</script> Lee's Moving Company
+  </div>
+</footer>
+
+<script>
+// ── PAGE VARIANTS (driven by ?p= param) ──────────────────
+(function(){
+  var pages = {
+    'local-movers': {
+      title: "Local Movers in South Florida | Lee's Moving Company",
+      h1: 'Your Trusted<br><span class="keyword">Local Movers.</span>',
+      sub: 'Professional local movers serving South Florida. Fully licensed and insured with transparent pricing \u2014 no surprises, no hidden fees.'
+    },
+    'west-palm-beach-movers': {
+      title: "West Palm Beach Movers | Lee's Moving Company",
+      h1: 'West Palm Beach<br><span class="keyword">Movers You Can Trust.</span>',
+      sub: 'Experienced movers serving West Palm Beach and surrounding Palm Beach County. Licensed, insured, and up-front pricing on every move.'
+    },
+    'south-florida-movers': {
+      title: "South Florida Movers | Lee's Moving Company",
+      h1: 'Professional<br><span class="keyword">South Florida Movers.</span>',
+      sub: 'Full-service movers serving all of South Florida \u2014 Palm Beach, Broward, and Miami-Dade. Licensed, insured, and transparent flat-rate quotes.'
+    }
+  };
+  var p = new URLSearchParams(window.location.search).get('p') || 'local-movers';
+  var cfg = pages[p] || pages['local-movers'];
+  document.title = cfg.title;
+  document.getElementById('hero-headline').innerHTML = cfg.h1;
+  document.getElementById('hero-sub').textContent = cfg.sub;
+})();
+
+// ── SHARED API SUBMIT ─────────────────────────────────────
+function submitToSmartMoving(data, formEl) {
+  var params = new URLSearchParams(window.location.search);
+  var utmCampaign = params.get('utm_campaign') || '';
+  var utmKeyword  = params.get('utm_keyword') || '';
+  var utmMedium   = params.get('utm_medium') || '';
+  var utmSource   = params.get('utm_source') || '';
+
+  var body = {
+    FullName: data.name || '',
+    PhoneNumber: data.phone || '',
+    Email: data.email || '',
+    MoveDate: data.date ? data.date.replace(/-/g, '') : '',
+    OriginAddressFull: data.from || '',
+    DestinationAddressFull: data.to || '',
+    Medium: utmMedium || 'organic'
+  };
+
+  if (utmCampaign) { body.Campaign = utmCampaign; body.UtmCampaign = utmCampaign; }
+  if (utmKeyword)  { body.UtmKeyword = utmKeyword; }
+  if (utmMedium)   { body.UtmMedium = utmMedium; }
+  if (utmSource)   { body.Source = utmSource; body.UtmSource = utmSource; }
+  var referralSource = params.get('referral_source') || document.referrer || '';
+  if (referralSource) { body.ReferralSource = referralSource; }
+
+  fetch('https://api.smartmoving.com/api/leads/from-provider/v2?providerKey=e438dd42-7499-492e-b901-aca70007332f', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  }).catch(function(){});
+
+  var successHTML = '<div class="form-success">' +
+    '<div class="form-success-ring"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>' +
+    '<h3>You\'re all set!</h3>' +
+    '<p>We received your request and will follow up shortly with your personalized quote.</p>' +
+    '<a href="tel:+15616773898" class="btn-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg>(561) 677-3898</a>' +
+    '</div>';
+  formEl.innerHTML = successHTML;
+}
+
+// ── HERO FORM ─────────────────────────────────────────────
+function submitHeroForm() {
+  var card = document.getElementById('hero-form-card');
+  submitToSmartMoving({
+    from:  document.getElementById('h-from').value,
+    to:    document.getElementById('h-to').value,
+    name:  document.getElementById('h-name').value,
+    phone: document.getElementById('h-phone').value,
+    email: document.getElementById('h-email').value,
+    date:  document.getElementById('h-date').value
+  }, card);
+}
+
+// ── FOOTER FORM ───────────────────────────────────────────
+function submitFooterForm() {
+  var card = document.getElementById('footer-form-card');
+  submitToSmartMoving({
+    from:  document.getElementById('ff-from').value,
+    to:    document.getElementById('ff-to').value,
+    name:  document.getElementById('ff-name').value,
+    phone: document.getElementById('ff-phone').value,
+    email: document.getElementById('ff-email').value,
+    date:  document.getElementById('ff-date').value
+  }, card);
+}
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(fi){
+      fi.classList.remove('open');
+    });
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+
+</script>
+<script src="india.js" defer></script>
+</body>
+</html>
