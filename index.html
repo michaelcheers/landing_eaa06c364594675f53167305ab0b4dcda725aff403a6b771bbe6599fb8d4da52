@@ -121,7 +121,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    HERO
 ────────────────────────────────────────── */
 .hero {
-  background: var(--ink);
+  background: #1e2d6a;
   color: #fff;
   padding: 100px 48px 64px;
   overflow: hidden;
@@ -133,7 +133,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: rgba(15,25,35,.82);
+  background: rgba(30,45,106,.82);
   background-image:
     linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
@@ -854,8 +854,13 @@ footer a { color: var(--fire); }
   .ff-field.full { grid-column: auto; }
   footer { flex-direction: column; text-align: center; }
   .topbar { display: none; }
-  .nav { top: 0; }
+  .nav { top: 0; padding: 0 20px; }
   nav .btn-nav { display: none; }
+  .fm-logo-img { height: 40px; }
+  .logo { margin-right: 12px; }
+  .nav-phone { flex-direction: row; align-items: center; gap: 8px; }
+  .nav-phone small { display: none; }
+  .nav-phone a { font-size: 17px; white-space: nowrap; }
   .why-sec, .reviews-sec, .map-sec, .faq-sec, .footer-form-sec, .services-sec, .process-sec { padding-left: 24px; padding-right: 24px; }
   .proof-strip-inner { padding: 0 24px; overflow-x: auto; }
   .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
@@ -877,6 +882,11 @@ footer a { color: var(--fire); }
   .cta-strip-inner { flex-direction: column; gap: 12px; }
   .services-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 360px) {
+  .nav { padding: 0 14px; }
+  .fm-logo-img { height: 34px; }
+  .nav-phone a { font-size: 15px; }
 }
 
 </style>
@@ -1487,7 +1497,7 @@ footer a { color: var(--fire); }
           </div>
         </div>
       </div>
-      <img src="team-photo.jpg" alt="Lee's Moving Company crew" style="margin-top:32px;border-radius:16px;width:100%;object-fit:cover;object-position:top;max-height:220px;border:1.5px solid rgba(255,255,255,.1);">
+      <img src="team-photo.webp" alt="Lee's Moving Company crew" style="margin-top:32px;border-radius:16px;width:100%;object-fit:cover;object-position:top;max-height:220px;border:1.5px solid rgba(255,255,255,.1);">
     </div>
     <div class="ff-right">
       <div class="ff-form-card" id="footer-form-card">
